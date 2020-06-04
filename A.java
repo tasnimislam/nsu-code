@@ -51,11 +51,16 @@ public class Students
         FileWriter fw=new FileWriter("output.txt"); 
         
         Scanner sc = new Scanner(file); 
+        Scanner myInput = new Scanner( System.in );
         
         while (sc.hasNextLine()){
-             String[] list = sc.nextLine().split().map{};
-             Students newstudent = new Students(list[0].toInt(), list[1], list[2].toInt(), 
-                                                list[3].toDouble(), list[4].toDouble());
+             int ID = myInput.nextInt();
+             String Name = myInput.nextString();
+             int CreditCompleted = myInput.nextInt();
+             double LastSemesterGPA = myInput.nextInt();
+             double CGPAID = myInput.nextInt();
+             
+             Students newstudent = new Students(ID, Name, CreditCompleted, LastSemesterGPA, CGPA);
              fw.write(newstudent.toString()); 
         }
         
