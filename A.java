@@ -1,4 +1,3 @@
-
 import java.util.*;
 import java.lang.*;
 import java.io.*;
@@ -45,6 +44,24 @@ public class Students
         return(ID + " " + Name + " " + CreditCompleted + " " + LastSemesterGPA + " " 
                 + CGPA + " " + this.Eligibility + " " + this.Percent + "%\n")
     }
+    
+    public static void main(String[] args) throws Exception
+    { 
+        File file = new File("input.txt"); 
+        FileWriter fw=new FileWriter("output.txt"); 
+        
+        Scanner sc = new Scanner(file); 
+        
+        while (sc.hasNextLine()){
+             String[] list = sc.nextLine().split().map{};
+             Students newstudent = new Students(list[0].toInt(), list[1], list[2].toInt(), 
+                                                list[3].toDouble(), list[4].toDouble());
+             fw.write(newstudent.toString()); 
+        }
+        
+        fw.close();
+    }
+    } 
     
     
     
